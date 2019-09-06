@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            font-size:1.2rem;
+            font-family:Britannic;
+        }
+    </style>
+</head>
+<body>
+    
+        <script>
+            var a = 10;
+            a = 20;
+            a = a + 10;
+            a += 5; //即a=a+5
+            a -= 8;
+            a *= 2;
+            a /= 3;
+
+            document.write("a=" + a + "<br>"+"<HR>");
+
+            var a = 10, b = 20;
+            c = a;
+            a = b;
+            b = c;
+
+
+            document.write("a=" + a + ",b=" + b + "<br>"+"<HR>");
+            //////////////////////////////////////////////////
+            var a = 105, b = 80;  //不宣告第三個變數，將兩數交換，但是若位數過多(溢位)可能會失去精準度
+            a += b;
+            b = a - b;
+            a -=b;
+            document.write("a=" + a + ",b=" + b + "<br>" + "<HR>");
+
+            var a = 10001, b = 54321; //不宣告第三個變數，避免溢位的寫法
+            a = a ^ b;
+            b = a ^ b;
+            a = a ^ b;
+            document.write("a=" + a + ",b=" + b + "<br>" + "<HR>");
+            var strName = "Rose", intNumber = 5000, blnGender = true;
+            var result;
+
+            result = strName + blnGender;
+            document.write("result=" + result + "<br>" );
+            document.write("reslut資料型態為：" + typeof (result) + "<BR>" + "<HR>");
+            result = strName + intNumber;
+            document.write("result=" + result + "<br>" );
+            document.write("reslut資料型態為：" + typeof (result) + "<BR>" + "<HR>");
+
+            result = intNumber + strName;
+            document.write("result=" + result + "<br>" );
+            document.write("reslut資料型態為：" + typeof (result) + "<BR>" + "<HR>");
+            result = intNumber + blnGender;
+            document.write("result=" + result + "<br>" );
+            document.write("reslut資料型態為：" + typeof (result) + "<BR>" + "<HR>");
+
+            result = blnGender + strName;
+            document.write("result=" + result + "<br>" );
+            document.write("reslut資料型態為：" + typeof (result) + "<BR>" + "<HR>");
+            result = blnGender + intNumber;
+            document.write("result=" + result + "<br>" );
+            document.write("reslut資料型態為：" + typeof (result) + "<BR>" + "<HR>");
+            //////////////////////////////////////////////////
+            document.write(parseInt("3.2") + "<BR>");
+            document.write(parseInt("3.2A") + "<BR>");
+            document.write(parseInt("3 page 2") + "<BR>");
+            document.write(parseInt("18FF", 16) + "<BR>");
+            document.write(parseInt("18FF", 8) + "<BR>");
+            document.write(parseInt("18FF", 10) + "<BR>");
+            document.write(parseInt("FF18") + "<BR>");  //結論是字串轉數字，開頭若不是數字，即顯示NaN(Not a Number)；若開頭為數字，後面文字部分無法轉，只保留數字一開始的數字
+
+            document.write(parseFloat("3.2") + "<BR>");
+            document.write(parseFloat("aaaa3.2") + "<BR>"+"<HR>");
+           //////////////////////////////////////////////////////
+            document.write(eval("5 > 3") + "<BR>");  //eval可將文字字串用來運算
+            document.write(eval("aaaa=1000") + "<BR>");
+            document.write(eval("20+4*5") + "<BR>");
+            document.write(eval("5>3"));
+
+            
+            
+           
+        </script>
+    
+</body>
+</html>

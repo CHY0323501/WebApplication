@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #container {
+            width:1200px;
+            margin:auto;
+        }
+        header {
+            background-color:aqua;
+            height:80px;
+        }
+        aside {
+            background-color:blanchedalmond;
+            height:420px;
+            width:210px;
+            float:left;  /*切版時由於<header><aside><artical><footer>標籤原生作用跟div一樣，會自動換行，故要排左右版型或是要製作文繞圖時要使用到float屬性*/
+        }
+        article {
+            background-color:cadetblue;
+            height:420px;
+            width:560px;
+            float:right;    /*切版時由於<header><aside><artical><footer>標籤原生作用跟div一樣，會自動換行，故要排左右版型或是要製作文繞圖時要使用到float屬性*/
+        }
+        footer {
+            background-color:crimson;
+            height:76px;
+            clear:both;    /*在設定完float之後會發現，footer的位置不對，故在使用完float之後都要使用clear來回復位置*/
+        }
+    </style>
+</head>
+<body>
+    <!--切版前給一個div，限制整個版面大小，如此一來container底下的東西就不用再設定一次。-->
+    <div id="container">
+        <header>
+              <img src="page_photo/top.jpg" />
+        </header>
+        <aside>
+            <img src="page_photo/left.jpg" />
+        </aside>
+        <article>
+            <img src="page_photo/right.jpg" />
+        </article>
+        <footer>
+            <img src="page_photo/bottom.jpg" />
+        </footer>
+    </div>
+</body>
+</html>

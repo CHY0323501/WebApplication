@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        h1 {
+            color:red;
+        }
+        h2 {
+            color:orange;
+        }
+        h3 {
+            color:yellow;
+        }
+        h4 {
+            color:green;
+        }
+        h5 {
+            color:dodgerblue;
+        }
+        h6 {
+            color:mediumpurple;
+        }
+        hr {
+            border:0.5px dashed #808080;
+        }
+        #id1 {
+            color:black;
+            font-size:12pt;
+            font-family:微軟正黑體;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //迴圈
+
+        //for (let i = 1; i <=6;i++) {
+        //    document.write("<H"+i+">"+"我是H"+i + "！</H" + i+"><BR>");            
+        //}
+        //document.write("<HR>"); 
+
+
+        //巢狀迴圈
+        //for (let j = 1; j <= 100; j++) {
+        //    for (let i = 1; i <= 6; i++) {
+        //    document.write("<H"+i+">"+"我是H"+i + "！</H" + i+"><BR>");            
+        //    }
+        //}
+
+        //輸出100組H1~H6(共106圈)
+        //var result = "";
+        //for (let i = 1; i <= 6; i++) {
+        //    result += "<H" + i + ">" + "我是H" + i + "！</H" + i+"><BR>";            
+        //}
+        //console.log(result);
+        //for (let j = 1; j <= 100; j++) {
+        //     document.write(result); 
+        //}
+
+        //輸出100組H1~H6(只要84圈，輸出成等差成長，result共輸出14組，共630行)
+        var i = 1, total = 0, c = 0;
+        var result = "";
+        for (let j = 1; j <= 84; j++) {
+            result += "<H" + i + ">" + "我是H" + i + "！</H" + i + ">";
+            i++;
+            c++
+            if (i==7) {
+                i = 1;
+                document.write(result);
+                total = total + c;
+                console.log(total);
+            }
+            
+        }
+        //var star = "";
+        //var j = 1;
+        //for (let i = 1; i <= 5;i++) {
+        //    var star =star+"*";                     
+        //    document.write(star+"<BR>");         
+        //}
+
+    </script>
+</body>
+</html>

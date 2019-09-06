@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var Rainbow = new Array("紅", "橙", "黃", "綠", "藍", "靛", "紫"); 
+        document.write(Rainbow);
+        document.write("<hr>");
+        var RainbowColor = new Array("Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet");
+        document.write(RainbowColor);
+        document.write("<hr>");
+
+        for (i = 0; i < 7; i++) {
+            document.write(Rainbow[i]+" ");
+        }
+        document.write("<hr>");
+         for (j = 0; j < 7; j++) {
+            document.write(RainbowColor[j]+" ");
+        }
+        document.write("<hr>");
+        for (k = 0; k < Rainbow.length; k++) {               //依照文字顯示出對應的顏色
+            document.write("<span style='font-size:3rem;color:" + RainbowColor[k]+"'>" +Rainbow[k] + "</span> " );
+
+        }
+        document.write("<hr>");
+        for (var i in Rainbow) {               //for each(又稱feach)，物件中有i個值就拜訪i次
+            document.write("<span style='font-size:3rem;color:" +RainbowColor[i]+"'>"+Rainbow[i]+ "</span> ");
+        }
+    </script>
+</body>
+</html>

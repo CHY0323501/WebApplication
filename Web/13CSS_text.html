@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        h1,span,p {
+        border:1px solid;
+        }
+    </style>
+</head>
+<body>
+    <!--文字對齊(相對於父物件位置)-->
+    <h1>hello ~~~!!!!!!</h1>
+    <h1 style="text-align:center">hello ~~~!!!!!!</h1>
+    <h1 style="text-align:right">hello ~~~!!!!!!</h1>
+    <span style="text-align:right">hello ~~~!!!!!!</span> <!--span標籤沒有自成一個block-->
+
+    <hr />
+    <!--指定物件寬度-->
+    <h1 style="width:800px">hello ~~~!!!!!!</h1>
+    <h1 style="width:80%">hello ~~~!!!!!!</h1>
+    <h1 style="background-color:aquamarine">hello ~~~!!!!!!</h1>
+    <hr />
+    <p style="width:700px;text-align:center">官方網站</p>
+    <p style="width:70%;text-align:center">官方網站</p>
+    <p style="background-color:aquamarine">官方網站</p>
+    <hr />
+    <!--文字樣式-->
+    <a href="https://www.google.com.tw/" style="text-decoration:none;font-size:20pt;cursor:grab" title="前往google~~~~~~~~">google首頁</a> <!--text-decoration可以把超連結原本的底線取消掉-->
+    <h3 style="text-decoration:line-through">原價:300,000</h3>
+    <h2 style="font-size:48pt;color:deeppink;font-family:Forte" title="特價">特價:3,000</h2>
+    <hr />
+    <!--大小寫處理-->
+    <h1 style="text-transform:uppercase">Welcome My Website</h1>
+    <h1 style="text-transform:lowercase">Welcome My Website</h1>
+    <h1 style="text-transform:capitalize">welcome my website</h1>
+    <h1 style="text-transform:capitalize">WELCOME MY WEBSITE</h1> <!--capitalize只針對每個單字的第一個字母處理!!!-->
+    <hr />
+    <!--文字陰影及物件陰影-->
+    <h1 style="font-size:48pt;text-shadow:7px 7px 3px #789cf1,7px 10px 3px #ffd800,10px 10px 3px #ff0000">welcome my website</h1>
+    <h1 style="font-size:48pt;box-shadow:7px 7px 3px #789cf1,7px 10px 3px #ffd800,10px 10px 3px #ff0000">welcome my website</h1>
+    <span style="font-size:48pt;text-shadow:7px 7px 3px #789cf1,7px 10px 3px #ffd800,10px 10px 3px #ff0000">welcome my website</span>
+    <br />
+    <span style="font-size:48pt;box-shadow:7px 7px 3px #789cf1,7px 10px 3px #ffd800,10px 10px 3px #ff0000">welcome my website</span><br /><br /><br />
+    <hr />
+    <!--文字距離-->
+    <h1 style="letter-spacing:28pt;border:none">Welcome My Website</h1>
+    <h1 style="word-spacing:28pt;border:none">Welcome My Website</h1>
+    <h1 style="letter-spacing:28pt;border:none">中文字距</h1>
+    <hr />
+    <!--網頁可調整文字大小實作-->
+    <input id="Btn1" type="button" value="放大文字" />
+    <input id="Btn2" type="button" value="縮小文字" />
+    <input id="Btn3" type="button" value="恢復原始大小" />
+
+    <p id="news1" style="border:none">
+        郭台銘連續8個月增加鴻海股票，週一國民黨宣布總統初選結果，由高雄市長韓國瑜勝出，鴻海卻連續兩天上漲。鴻海17日股價收在79.3元，小跌0.88%，成交量約3.14萬張，市值跌破新台幣1.1兆元，來到1.09兆元。
+
+        ▼郭台銘日前接受《這！不是新聞》專訪。（圖／東森財經新聞提供）
+
+        檢視相片
+        儘管初選失利，但郭台銘未來動向備受矚目。自稱「一群期盼郭台銘回家的股東」17日在晚報刊登半版廣告，上面用斗大的紅色字體寫道「回家吧！郭董！鴻海，需要您！！」、「我們相信百萬股東都歡迎您盡快再創鴻海高峰！」
+
+
+
+        據彭博億萬富豪指數（Bloomberg Billionaires Index）統計，扣除掉質押股票，郭台銘自今年4月17日宣布投入國民黨總統初選當天，淨資產尚有45億美元（約新台幣1408億元，下同），但到本月15日初選結果揭曉後，淨資產變為43.2億美元（約新台幣1352億元），縮水了1.8億美元（約新台幣56億元）。
+        鴻海6月21日股東會全面改選董事，新任董事會推選劉揚偉為新任董事長，郭台銘退居董事一職，並表示「絕對不會回來鴻海」。郭台銘幕僚劉宥彤近日接受廣播採訪時表示，郭台銘將出國沉澱，至於郭台銘下一步的安排是什麼，她則表示自己也不清楚。
+
+        （封面圖／東森新聞資料畫面）
+
+        更多東森財經新聞報導
+    </p>
+    <script>
+        var Btn1 = document.getElementById("Btn1");
+        var Btn2 = document.getElementById("Btn2");
+        var Btn3 = document.getElementById("Btn3");
+        var news1 = document.getElementById("news1");
+
+        Btn1.addEventListener('click', function () {
+            news1.style.fontSize = "24pt";
+        });
+        Btn2.addEventListener('click', function () {
+            news1.style.fontSize = "8pt";
+        });
+        Btn3.addEventListener('click', function () {
+            news1.style.fontSize = "12pt";
+        });
+    </script>
+
+</body>
+</html>

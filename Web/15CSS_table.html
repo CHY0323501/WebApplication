@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!--此頁用於說明使用inline的寫法在表格中非常耗時、沒效率-->
+    <table style="width:600px;height:600px;border:3px double ;text-align:center;font-family:微軟正黑體">
+        <tfoot>
+            <!--在tfoot標籤中的內容會被擺到表格最下方，有絕對位置，且此儲存格的大小是依照內容多寡-->
+            <tr>
+                <td colspan="3">日期20190723</td>
+
+            </tr>
+        </tfoot>
+        <tr>
+            <td>張三</td>
+            <td>國文</td>
+            <td>90</td>
+        </tr>
+
+        <tr>
+            <td>陳Q</td>
+            <td>英文</td>
+            <td>30</td>
+        </tr>
+
+        <tr>
+            <td>老五</td>
+            <td>數學</td>
+            <td>15</td>
+        </tr>
+
+        <thead>
+            <!--在thead標籤中的內容會被擺到表格最上方，有絕對位置，且此儲存格的大小是依照內容多寡-->
+            <tr>
+                <th>姓名</th> <!--th標籤內容會在儲存格置中位置，並且會加粗體-->
+                <th>科目</th>
+                <th>分數</th>
+            </tr>
+        </thead>
+
+        <caption>表格框線外的表格標題</caption>
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #container {
+            width:770px;
+            margin:auto;
+            
+            position:relative;  /*如果不把圖片的父節點指定為container的話，ad3圖片會以body來調整位置。*/
+        }
+        header {           
+            height:80px;
+        }
+        aside {            
+            height:420px;
+            width:210px;
+            float:left;  /*切版時由於<header><aside><artical><footer>標籤原生作用跟div一樣，會自動換行，故要排左右版型或是要製作文繞圖時要使用到float屬性*/
+        }
+        article {            
+            height:420px;
+            width:560px;
+            float:right;    /*切版時由於<header><aside><artical><footer>標籤原生作用跟div一樣，會自動換行，故要排左右版型或是要製作文繞圖時要使用到float屬性*/
+        }
+        footer {            
+            height:76px;            
+            clear:both;    /*在設定完float之後會發現，footer的位置不對，在使用完float之後使用clear來回復位置*/
+        }
+        #ad1 {
+            position:fixed;
+            top:5px;
+            left:0px;
+            transform:translate(15px,150px) scale(1.2,2);
+        }
+        #ad2 {
+             position:fixed;
+             top:5px;
+             right:0;
+        }
+        #ad3 {
+             position:absolute;  /*當position給了absolute，此時margin會失效。*/
+             top:50px;
+               
+        }
+        #ad3 > span {
+            color:white;
+            background-color:#938c8c;
+            cursor:pointer;             /*改變滑鼠游標*/
+            font-family:微軟正黑體;
+        }
+        .hide {
+            display:none;               /*關閉廣告*/
+            /*visibility:hidden;*/     /*display及visibility都是設定物件是否隱藏，display設為none後，物件就消失了，而visibility物件仍存在只是隱藏看不到而已。*/
+        }
+
+    </style>
+</head>
+<body>
+    <!--切版前給一個div，限制整個版面大小，container底下的東西就不用再設定一次。-->
+    <div id="container">
+        <header>
+            <img src="page_photo/top.jpg" />
+        </header>
+        <aside>
+            <img src="page_photo/left.jpg" />
+        </aside>
+        <article>
+            <img src="page_photo/right.jpg" />
+        </article>
+        <footer>
+            <img src="page_photo/bottom.jpg" />
+
+        </footer>
+        <div id="ad3">
+            <span>點我關閉</span><br />
+            <img src="page_photo/ad.jpg"  />
+        </div>
+    </div>
+
+    <img src="page_photo/banner2.jpg" title="ad2" id="ad2" /> 
+    <img src="page_photo/banner1.jpg" id="ad1"/>
+    
+    <script>
+
+        function getAd3Width() {
+            var ad3 = document.getElementById("ad3");
+            var container = document.getElementById("container");
+        
+
+            var wid = (container.clientWidth - ad3.clientWidth) / 2;         /*讓電腦自動抓取container的寬度-廣告圖片的寬度，除以2以後就是左邊界與右邊界該有的px，即使頁面大小改變仍可以在中間*/
+            ad3.style.left = wid + "px";
+        
+            console.log(wid);
+            console.log(container.clientWidth);
+            console.log(ad3.clientWidth);
+        }
+
+        window.onload = getAd3Width;                /*當網頁載入完之後再去計算寬度*/
+
+        ad3.children[0].addEventListener('click', function(){   /*ad3底下共有三個小孩1.<SPAN> 2.<BR> 3.<IMG>，此行指定為第一個小孩即為SPAN。*/
+            ad3.className = "hide";
+        }
+
+        )
+    </script>
+    
+
+</body>
+</html>

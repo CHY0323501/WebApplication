@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var a =5000, b = 5000;
+        if (a == b) {                       //比較運算一定要兩個等於，若只有一個等於，會做指定運算!!!!!!!
+            b = true;
+            document.write(b+"<HR>");            
+        }
+        else {
+            b = false;
+            document.write(b+"<HR>");
+        }
+
+        var intPayType = 3; //1:信用卡付款 2:現金 3:轉帳 4:貨到付款
+        if (intPayType == 1) {
+            document.write("信用卡付款");
+        }
+        else if (intPayType == 2) {
+            document.write("現金");
+        }
+        else if (intPayType == 3) {
+            document.write("轉帳");
+        }
+        else if(intPayType == 4){
+            document.write("貨到付款");
+        }
+        document.write("<HR>");
+        
+        var score = window.prompt("請輸入成績");  //else if是屬於一個if底下的，若換寫法不用else if而用五個if，這時程式固定會跑五次if，效能會有差。 
+
+        document.write("等第：");
+        if (score >= 90 && score<=100) {
+            document.write("優等")
+        } else if (score >= 80) {
+            document.write("甲等")
+        } else if (score >= 70) {
+            document.write("乙等")
+        } else if (score >= 60) {
+            document.write("丙等")
+        } else if (score >= 0) {
+            document.write("丁等")
+        }
+
+    </script>
+</body>
+</html>

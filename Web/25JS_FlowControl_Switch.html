@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            font-family:微軟正黑體;
+            font-weight:600;
+            font-size:1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var intPayType = 3; //1:信用卡付款 2:現金 3:轉帳 4:貨到付款
+        switch (intPayType ) {                                           //switch可以算數運算，不可以比較運算；一定要加上break;
+            case 1:
+                document.write("信用卡付款");
+                break;
+            case 2:
+                document.write("現金付款");
+                break;
+            case 3:
+                document.write("轉帳付款");
+                break;
+            case 4:
+                document.write("貨到付款");
+                break;
+        }
+        document.write("<HR>");
+        var srtColor = "藍";
+        switch (srtColor) {
+            case "紅":
+                document.write("這是紅色");
+                break;
+            case "黃":
+                document.write("這是黃色");
+                break;
+            case "綠":
+                document.write("這是綠色");
+                break;
+            default:
+                document.write("不知道甚麼色");
+                break;
+        }
+        document.write("<HR>");
+        var score = parseInt(prompt("請輸入成績"));
+        console.log(score);
+        
+        switch (score) {
+            case 10:
+                document.write("優等");
+                break;
+            case 9:
+                document.write("優等");
+                break;
+            case 8:
+                document.write("甲等");
+                break;
+            case 7:
+                document.write("乙等");
+                break;
+            case 6:
+                document.write("丙等");
+                break;
+            default:
+                document.write("丁等");
+                break;
+        }
+    </script>
+</body>
+</html>
