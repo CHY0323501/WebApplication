@@ -12,11 +12,7 @@ namespace _01MVC_Todo.Controllers
 {
     public class TodoesController : Controller
     {
-        //測試
-        public ActionResult test() {
-
-        }
-
+        //1111
         public ActionResult Index()
         {
             return View();
