@@ -1,0 +1,61 @@
+﻿@model IEnumerable<_01MVC_Todo.Models.Todo>
+
+@{
+    ViewBag.Title = "待辦事項";
+}
+
+    <h2>待辦事項</h2>
+
+<p>
+    @*<a href="/Home/Create">新增待辦事項</a>|*@               @*不使用helper的寫法*@
+    @Html.ActionLink("新增待辦事項", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            序號
+        </th>
+        <th>
+            標題
+            @*@Html.DisplayNameFor(model => model.title)*@
+        </th>
+        <th>
+            優先程度
+            @*@Html.DisplayNameFor(model => model.Image)*@
+        </th>
+        <th>
+            結束日期
+            @*@Html.DisplayNameFor(model => model.Date)*@
+        </th>
+        <th>事件管理</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.ID
+            @*@Html.DisplayFor(modelItem => item.ID)*@
+        </td>
+        <td>
+            @item.title
+            @*@Html.DisplayFor(modelItem => item.title)*@
+        </td>
+        <td>
+            <img src="~/images/@item.Image" width="30px"/>
+            @*@Html.DisplayFor(modelItem => item.Image)*@
+        </td>
+        <td>
+
+            @item.Date.ToShortDateString()
+            @*@Html.DisplayFor(modelItem => item.Date)*@
+        </td>
+        <td>
+            <a href="/Home/Edit?id=@item.ID">編輯</a> |
+            @*@Html.ActionLink("編輯", "Edit", new { id = item.ID }) |*@    @*helper在URL帶參數的寫法*@
+            <a href="/Home/Delete?id=@item.ID">刪除</a>
+            @*@Html.ActionLink("刪除", "Delete", new { id = item.ID })*@
+        </td>
+    </tr>
+}
+
+</table>

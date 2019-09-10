@@ -19,6 +19,6 @@ namespace _01MVC_Todo.Models
         {
         }
 
-        public System.Data.Entity.DbSet<_01MVC_Todo.Models.Todo> Todoes { get; set; }
+        public System.Data.Entity.DbSet<_01MVC_Todo.Models.Todo> Todoes { get; set; }       //get可取得、set可設定值
     }
 }
