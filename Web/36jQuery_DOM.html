@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .line{
+            border:1px solid;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        444444
+    </h1>
+    <div id="container">
+
+    </div>
+    <h1>
+        333333333
+    </h1>
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        //.HTML()：放在此函數中的字串若有標籤字串可以轉為HTML標籤；.TEXT()：放在此函數中的字串若有標籤字串不能轉為HTML標籤，會全部視為字串
+        //HTML()及TEXT()兩者無法同時使用，只會有其中一個效果。
+        //要操作DOM物件可以使用.APPEND()：在一個節點中加上一個子節點；.AFTER()：成為節點的下一個兄弟節點
+
+        //$('#container').html('<h1>111111111</h1>').append('<h2>2222222</h2>');
+        //$('#container').append('<h2>2222222</h2>');
+        $('#container').html('<h1>111111111</h1>');
+        $('#container+h1').after('<h2>2222222</h2>');
+    </script>
+
+</body>
+</html>

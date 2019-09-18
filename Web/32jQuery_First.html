@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .line {
+            border:1px solid;
+        }
+        .BLUE {
+             background-color:cornflowerblue;
+        }
+        .YELLOW {
+            background-color:yellow;
+        }
+       
+    </style>
+</head>
+<body>
+    <ul id="LIST">
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+        <li>eee</li>
+    </ul>
+
+    <ul id="LIST2">
+        <li>aaa</li>
+        <li>bbb
+            <ul>
+                <li>bbb1</li>
+                <li>bbb2</li>
+                <li>bbb3</li>
+            </ul>
+        </li>
+        <li>ccc</li>
+        <li>ddd</li>
+        <li>eee</li>
+    </ul>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $('#LIST');    //相當於var LIST =document.getElementById("LIST");
+        $('#LIST').addClass('BLUE');
+        $('#LIST').addClass('line');
+        $('#LIST').addClass('line').addClass('BLUE').addClass('YELLOW');            //可以把要加的class寫在一起
+
+        $('#LIST2').addClass('YELLOW');
+        $('#LIST2>li li').addClass('BLUE')
+        $('#LIST2 li:nth-child(2n+1)').addClass('line')
+
+
+    </script>
+</body>
+</html>

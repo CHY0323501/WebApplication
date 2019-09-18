@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <title>click事件</title>
+    <style>
+        body {
+            font-family:微軟正黑體;
+            height:100vh;
+        }
+        .line {
+            border:1px solid #0094ff;
+            border-radius:5px;
+            cursor:pointer;
+        }
+        .small {
+            font-size:0.5rem;
+        }
+        .large {
+            font-size:2rem;
+        }
+        .default {
+            font-size:1rem;
+        }
+        .larger {
+            font-size:3rem;
+        }
+         .selected {
+            background-color:#feee97;
+            border:3px double #0094ff;
+            font-weight:500;
+        }
+        .hide {
+            display:none;
+        }
+       .show {
+            display:initial;
+        }
+    </style>
+</head>
+<body>
+    <span>顯示功能按鈕</span><br>
+    <div id="switcher">
+        <span id="small">縮小</span>
+        <span id="default">標準</span>
+        <span id="large">放大</span>
+        <span id="larger">3倍大</span>
+    </div>
+    <div>我是一行測試文字</div>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $('#switcher span').addClass('line');
+        $('#switcher').addClass('hide');
+        //$('#small').click(function () {
+        //    $('body>div+div').removeClass().addClass('small');
+        //    $('#switcher span').removeClass('selected');
+        //    $('#small').addClass('selected');
+        //});
+        //$('#default').click(function () {
+        //    $('body>div+div').removeClass().addClass('default');
+        //    $('#switcher span').removeClass('selected');
+        //    $('#default').addClass('selected');
+        //});
+        //$('#large').click(function () {
+        //    $('body>div+div').removeClass().addClass('large');
+        //    $('#switcher span').removeClass('selected');
+        //    $('#large').addClass('selected');
+        //});
+
+        //合併上面程式碼
+        $('#switcher').click(function (evt) {
+            var btn = evt.target;
+            if ($(btn).is('span')) {                        //is可以用來判斷是誰或是物件的狀態
+                $('body>div+div').removeClass().addClass(btn.id);
+                $('#switcher span').removeClass('selected');
+                $(btn).addClass('selected');
+                $('#switcher').removeClass();
+            }
+        });
+        var flag = true;
+
+        //隱藏&開啟功能列表-用toggle寫
+        $('body>span').click(function () {
+            $('#switcher').toggle(1000);
+            a = flag ? '隱藏功能按鈕' : '顯示功能按鈕';
+            $(this).text(a);
+            flag != flag;                   //把flag改成相反值
+        });
+
+        //隱藏&開啟功能列表-用is寫
+        //$('body>span').click(function () {
+        //    if ($('#switcher').is(':hidden')) {
+        //        $('#switcher').removeClass('hide').addClass('show');
+        //        $(this).text('隱藏功能按鈕');
+        //    } else {
+        //        $('#switcher').removeClass('show').addClass('hide');
+        //        $(this).text('顯示功能按鈕');
+        //    }
+
+        //});
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <title></title>
+    <style>
+        body {
+            font-family: 微軟正黑體;
+            background: linear-gradient(314deg, #9d64df, #6bbfe6);
+            background-size: 400% 400%;
+            -webkit-animation: body_ani 6s ease infinite;
+            -moz-animation: body_ani 6s ease infinite;
+            animation: body_ani 6s ease infinite;
+        }
+
+        #booklist thead th {
+            font-size: 1.3rem;
+            color: white;
+            border-bottom: 2px solid #aeabab;
+        }
+
+        table {
+            width: 85%;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,5%);
+            background-color:rgba(255, 252, 252, 0.51);
+            border-radius:5px;
+        }
+        @-webkit-keyframes body_ani {
+            0% {
+                background-position: 14% 0%
+            }
+
+            50% {
+                background-position: 87% 100%
+            }
+
+            100% {
+                background-position: 14% 0%
+            }
+        }
+
+        @-moz-keyframes body_ani {
+            0% {
+                background-position: 14% 0%
+            }
+
+            50% {
+                background-position: 87% 100%
+            }
+
+            100% {
+                background-position: 14% 0%
+            }
+        }
+
+        @keyframes body_ani {
+            0% {
+                background-position: 14% 0%
+            }
+
+            50% {
+                background-position: 87% 100%
+            }
+
+            100% {
+                background-position: 14% 0%
+            }
+        }
+         tr {
+            height:200px;
+        }
+          #booklist tbody tr:hover {
+            background-color: #fbb639;
+        }
+           #booklist td:nth-child(1),#booklist th:nth-child(1) {
+            width:100px;
+        }
+        #booklist td:nth-child(2),#booklist th:nth-child(2) {
+            width:450px;
+        }
+       #booklist td:nth-child(3),#booklist th:nth-child(3) {
+            width:300px;
+        }
+      
+        td {
+            font-weight: 600;
+        }
+
+        td, th {
+            padding: 20px;
+            border-right: 1.5px dashed white;
+            letter-spacing: 1pt;
+            word-spacing: 1pt;
+        }
+        td:last-child, th:last-child {
+            border-right: none;
+        }
+
+        tr:nth-child(2n) {
+            background-color: rgba(254, 214, 141, 0.82);
+        }
+
+        img {
+            height: 80px;
+        }
+
+        body > div {
+            position: absolute;
+            left: 50%;
+            top: 5%;
+            transform: translateX(-50%);
+        }
+
+        .btn_radius {
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input id="Text1" type="text" placeholder="請輸入書名" />
+        <input id="Button1" type="button" value="Search" class="btn btn-primary btn-sm btn_radius" />
+    </div>
+    <table id="booklist"></table>
+    <br>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $('#Button1').click(function () {
+            $('#booklist').empty();
+            $.ajax({                                     //ajax：非同步資料交換（只有指定的位置會做request，而不是整頁網頁request）
+                type: 'get',                            //如何跟伺服器request，要介接的話使用get
+                url: "https://www.googleapis.com/books/v1/volumes?q=" + $('#Text1').val(),
+                success: function (data123) {                                        //當url是可用的時候執行此段程式
+                    $('#booklist').append("<thead><tr><th>圖示</th><th>書名</th><th>作者</th><th>出版商</th></tr></thead>");
+                    $('#booklist').append("<tbody>")
+                    for (i = 0; i < data123.items.length; i++) {
+                        $('#booklist').append("<tr><td><img src='" + data123.items[i].volumeInfo.imageLinks.smallThumbnail + "' /></td><td>" + data123.items[i].volumeInfo.title + "</td><td>" + data123.items[i].volumeInfo.authors + "</td><td>" + data123.items[i].volumeInfo.publisher + "</td></tr>");
+                    }
+                    $('#booklist').append("</tbody>")
+                },
+                error: function () {                    //error可不用寫，當沒寫的時候表示失敗時不做任何事情
+                    alert("發生錯誤");
+                }
+
+            });
+        });
+    </script>
+
+</body>
+</html>

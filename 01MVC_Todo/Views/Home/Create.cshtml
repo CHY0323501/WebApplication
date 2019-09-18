@@ -15,11 +15,11 @@
         <hr />
         @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@   
         <div class="form-group">
-            <label class = "control-label col-md-2" for="title">標題</label>
+            <label class = "control-label col-md-2" for="title" >標題</label>
             @*@Html.LabelFor(model => model.title, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
-                <input id="title" name="title" type="text" placeholder="請輸入標題" class = "form-control"/>
-                @*@Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control" } })
+                <input id="title" name="title" type="text" placeholder="請輸入標題" class = "form-control" required="required" value="@ViewBag.title2"/>
+                @*@Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control",required="required" } })
                 @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })*@
             </div>
         </div>
@@ -28,22 +28,36 @@
             <label class = "control-label col-md-2" for="Img">優先程度</label>
 
             @*@Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                <select id="Img" name="Img" class="form-control">
-                    <option value="1.png">普通</option>
-                    <option value="0.png">重要</option>
-                </select>
-                @*<input id="Img" name="Img" type="text" placeholder="請選擇優先程度" class="form-control" />*@
-                @*@Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })*@
-            </div>
+        <div class="col-md-10">
+            @{                                                                            @*保留原始表單狀態用*@
+                string check1 = "", check2 = "";
+                if (ViewBag.Img == "0.png")
+                {
+                    check1 = "selected";
+                }
+                if (ViewBag.Img == "1.png")
+                {
+                    check2 = "selected";
+                }
+
+            }
+            <select id="Img" name="Img" class="form-control" required>
+                <option value="1.png" @check2>普通</option>
+                <option value="0.png" @check1>重要</option>
+            </select>
+
+            <img src="~/images/1.png" id="show_img"/>
+            @*<input id="Img" name="Img" type="text" placeholder="請選擇優先程度" class="form-control" />*@
+            @*@Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })*@
+        </div>
         </div>
 
         <div class="form-group">
             <label class = "control-label col-md-2" for="Date">結束日期</label>
             @*@Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
-                <input id="Date" name="Date" type="text" placeholder="請輸入結束日期" class="form-control" />
+                <input id="Date" name="Date" type="date" class="form-control" required value="@ViewBag.Date"/>
                 @*@Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
                  @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })*@
             </div>
@@ -67,3 +81,9 @@
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    $('#Img').change(function () {
+        $('#show_img').attr('src', '/images/' + $('#Img').val())
+    });
+   
+</script>

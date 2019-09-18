@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .line{
+            border:1px solid;
+        }
+    </style>
+</head>
+<body>
+    <ol id="list">
+        <li>JavaScript程式設計</li>
+        <li>jQuery程式設計</li>
+        <li>ASP.net程式設計</li>
+        <li>PHP程式設計</li>
+        <li>JSP程式設計</li>
+        <li>ASP3.0程式設計</li>
+        <li>Dreamweaver網頁設計</li>
+        <li><a href="tw.yahoo.com">Yahoo!奇摩</a></li>
+        <li><a href="http://www.google.com.tw">Google</a></li>
+        <li><a href="http://kpptr.wda.gov.tw">高屏澎東分署</a></li>
+    </ol>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $('#list li:contains("ASP")').addClass('line');           //在li標籤中的文字有包含ASP字串的，加上line class
+        $('#list li>a[href*="c"]').addClass('line');            //表示在li底下的a標籤中的href屬性中有包含c這個字的就加上line class
+        $('#list li>a[href$="tw"]').addClass('line');           //表示在li底下的a標籤中的href屬性中的【結尾】有包含tw這個字串的就加上line class
+        $('#list li>a[href^="http"]').addClass('line');           //表示在li底下的a標籤中的href屬性中的【開頭】有包含http這個字串的就加上line class
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        /*h1 {
+            background-color:red;
+            color:white;
+            text-align:center;
+        
+        }*/
+       
+    </style>
+</head>
+<body>
+    <h1>歡迎光臨買web</h1>
+    <input id="Button1" type="button" value="button" onclick="getH1css()"/>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+
+        function getH1css() {
+            $('h1').css({                   //直接inline CSS，key、value都要用字串表示，換屬性不是用分號而是用逗號
+                'background-color': 'red',
+                'color': 'white',
+                'text-align': 'center'
+            });
+        }
+    </script>
+</body>
+</html>

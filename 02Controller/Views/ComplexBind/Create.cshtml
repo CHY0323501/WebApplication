@@ -1,0 +1,31 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>新增產品</title>
+</head>
+<body>
+    <form method="post" action="@Url.Action("Create")"> @*action使用helper可以自動尋找對應的controller*@
+        <h3>新增產品資訊</h3>
+        <div>
+            @*name的名稱必須和model中的屬性名稱一樣*@
+            <p>編號：<input id="Pid" name="Pid" type="text" value="@ViewBag.Pid" required /></p>
+            <p>品名：<input id="Pname" name="Pname" type="text" value="@ViewBag.Pname" required /></p>
+            <p>單價：<input id="Price" name="Price" type="text" value="@ViewBag.Price" required /></p>
+            <p><input id="Submit1" type="submit" value="submit" /></p>
+        </div>
+        <hr />
+        @{
+            if (ViewBag.Pid != null && ViewBag.Pname != null && ViewBag.Price != null)
+            {
+                <p>完成產品資料新增</p>
+                <p>編號：@ViewBag.Pid</p>
+                <p>編號：@ViewBag.Pname</p>
+                <p>編號：@ViewBag.Price</p>
+            }
+        }
+    </form>
+</body>
+</html>

@@ -1,61 +1,139 @@
 ﻿@model IEnumerable<_01MVC_Todo.Models.Todo>
+<style>
+    #table1 {
+        width: 100%;
+        text-align: center;
+    }
+
+        #table1 > thead th {
+            text-align: center;
+            font-size: 2rem;
+            color: #1c3721;
+        }
+
+        #table1 td, #table1 > tbody th {
+            border: 5px;
+        }
+        #table1 tbody tr:nth-child(2n) {
+        background-color:#fff5bb;
+         }
+        #table1 tbody tr:hover {
+            background-color: #ffd800!important;
+        }
+        #table1 th ,#table1 td{
+            border-right:1px dashed #cac3c3;
+        }
+        #table1 th:last-child, #table1 td:last-child {
+        border-right:none;
+        }
+    #btn span {
+        cursor: pointer;
+    }
+
+    .gray {
+        background-color: #c6c4c4!important;
+        color: white!important;
+    }
+
+    .pink {
+        background-color: #f599df!important;
+        color: white!important;
+    }
+
+    .blue {
+        background-color: #7194f6!important;
+        color: white!important;
+    }
+    .green {
+        background-color: #5fe97b!important;
+        color: white!important;
+    }
+    a {
+    text-decoration:none;
+    color:inherit;  
+    }
+</style>
+
 
 @{
     ViewBag.Title = "待辦事項";
 }
 
-    <h2>待辦事項</h2>
+<h2>待辦事項</h2>
 
 <p>
     @*<a href="/Home/Create">新增待辦事項</a>|*@               @*不使用helper的寫法*@
     @Html.ActionLink("新增待辦事項", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            序號
-        </th>
-        <th>
-            標題
-            @*@Html.DisplayNameFor(model => model.title)*@
-        </th>
-        <th>
-            優先程度
-            @*@Html.DisplayNameFor(model => model.Image)*@
-        </th>
-        <th>
-            結束日期
-            @*@Html.DisplayNameFor(model => model.Date)*@
-        </th>
-        <th>事件管理</th>
-    </tr>
+<div id="btn">
+    <span id="gray">　</span>
+    <span id="pink">　</span>
+    <span id="blue">　</span>
+    <span id="green">　</span>
+</div>
+<table class="table" id="table1">
+    <thead>
+        <tr>
+            <th>
+                序號
+            </th>
+            <th>
+                標題
+                @*@Html.DisplayNameFor(model => model.title)*@
+            </th>
+            <th>
+                優先程度
+                @*@Html.DisplayNameFor(model => model.Image)*@
+            </th>
+            <th>
+                結束日期
+                @*@Html.DisplayNameFor(model => model.Date)*@
+            </th>
+            <th>事件管理</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ID
+                @*@Html.DisplayFor(modelItem => item.ID)*@
+            </td>
+            <td>
+                @item.title
+                @*@Html.DisplayFor(modelItem => item.title)*@
+            </td>
+            <td>
+                <img src="~/images/@item.Image" width="30px" />
+                @*@Html.DisplayFor(modelItem => item.Image)*@
+            </td>
+            <td>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @item.ID
-            @*@Html.DisplayFor(modelItem => item.ID)*@
-        </td>
-        <td>
-            @item.title
-            @*@Html.DisplayFor(modelItem => item.title)*@
-        </td>
-        <td>
-            <img src="~/images/@item.Image" width="30px"/>
-            @*@Html.DisplayFor(modelItem => item.Image)*@
-        </td>
-        <td>
-
-            @item.Date.ToShortDateString()
-            @*@Html.DisplayFor(modelItem => item.Date)*@
-        </td>
-        <td>
-            <a href="/Home/Edit?id=@item.ID">編輯</a> |
-            @*@Html.ActionLink("編輯", "Edit", new { id = item.ID }) |*@    @*helper在URL帶參數的寫法*@
-            <a href="/Home/Delete?id=@item.ID">刪除</a>
-            @*@Html.ActionLink("刪除", "Delete", new { id = item.ID })*@
-        </td>
-    </tr>
-}
+                @item.Date.ToShortDateString()
+                @*@Html.DisplayFor(modelItem => item.Date)*@
+            </td>
+            <td>
+                <a href="/Home/Edit?id=@item.ID">編輯</a> |
+                @*@Html.ActionLink("編輯", "Edit", new { id = item.ID }) |*@    @*helper在URL帶參數的寫法*@
+                <a href="/Home/Delete?id=@item.ID" onclick="return confirm('要刪了喔')">刪除</a>
+                @*@Html.ActionLink("刪除", "Delete", new { id = item.ID },new{onclick="return confirm('要刪了喔')"})*@
+            </td>
+        </tr>
+    }
 
 </table>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+
+    //顯示色塊按鈕的顏色
+    for (i = 0; i < $('#btn span').siblings().length; i++) {
+        $('#btn').children()[i].className=$('#btn').children()[i].id;
+        
+    }
+    //點擊要改變的色塊按鈕後，偶數列表格要換色
+    $('#btn span').click(function checkcolor(event) {
+        var check = event.target.id;
+           $('#table1 tbody tr:nth-child(2n)').removeClass().addClass(check);
+        
+    });
+</script>
