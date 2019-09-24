@@ -126,14 +126,17 @@
     <Content Include="Web.config" />
     <Content Include="Views\Home\RazorTest.cshtml" />
     <Content Include="Views\bootstrap_practice\Index.cshtml" />
+    <Content Include="Views\HTML_Hepler\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\bootstrap_practiceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HTML_HeplerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Member.cs" />
     <Compile Include="Models\NightMarket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
