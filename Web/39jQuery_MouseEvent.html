@@ -21,6 +21,7 @@
             text-align:center;
             border-radius:10px;
             cursor:pointer;
+           
         }
             #product > div > h2 {
                 text-align:left;
@@ -38,9 +39,13 @@
                 font-size:0.8rem;
                 overflow:hidden;
             }
+        img {
+            height:150px;
+        }
         .hover {
             border:3px solid #b6ff00!important;
         }
+        
     </style>
 </head>
 <body>
@@ -79,6 +84,17 @@
         });
         $('#product').mouseout(function (evt) {
             $(evt.target).parent().removeClass('hover')
+        });
+        var flag = false;
+        var state = "";
+        
+        $('#product').mouseup(function (evt) {
+            var a =$(evt.target).text();
+            if (a=="加入購物車"||a=="已加入購物車") {
+                state = flag ? "加入購物車" : "已加入購物車"
+                $(evt.target).text(state);
+                flag = !flag;
+            }
         });
     </script>
 </body>

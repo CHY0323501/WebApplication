@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RazorTest</title>
+</head>
+<body>
+    <h2>RazorTest</h2>
+    @*單行註解*@
+
+    @*多行
+        註解*@
+
+    @*程式區段*@
+
+    @{
+        var name = "Nick";
+        string name2 = "Kevin";
+        int Math = 100, Eng = 95;
+
+        @:歡迎 @name 光臨               @*當程式區段中有包含字串及變數，使用@:告知有字串，變數部分使用@。      *@
+        <h2>歡迎 @name 光臨</h2> @*html標籤直接寫，C#程式前加上@。   *@
+
+    }
+    <h1>歡迎 @name 光臨</h1>
+    <h1>@(Math)+@(Eng)=@(Math + Eng)</h1>
+    
+    @(ViewBag.islogin = true)
+
+    @if (ViewBag.islogin)
+    {
+        @:會員已登入
+    }
+    else
+    {
+        <p>會員未登入</p>
+    }
+
+    <hr />
+
+    @{ 
+        string[] nightmarketname = { "瑞豐夜市", "新堀江商圈", "六合夜市", "青年夜市", "花園夜市", "大東夜市", "武聖夜市" };
+    }
+    <ol>
+        @foreach (var i in nightmarketname) {
+            <li>@i</li>
+        }
+    </ol>
+</body>
+</html>

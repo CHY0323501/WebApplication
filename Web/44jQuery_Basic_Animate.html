@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jquery-animate</title>
+    <style>
+        #container {
+            height: 1000px;
+            width: 800px;
+            position: relative;
+        }
+
+        #title {
+            border: 2px dashed white;
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 450px;
+            font-size: 1.3rem;
+            padding: 10px;
+            font-family: 微軟正黑體;
+            position: absolute;
+            font-weight: 900;
+            top: 650px;
+            left: 500px;
+        }
+
+        #photo {
+            position: absolute;
+            left: -1200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="photo" src="images/Penguins.jpg" />
+        <p id="title">北極企鵝</p>
+    </div>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $('#title').hide();
+        $('#photo').animate({ 'left': '+=1200' }, 2000, '', function () {
+            $('#title').fadeIn(1500, function () {
+                $('#photo,#title').hide(1500);
+            });
+        });
+
+    </script>
+</body>
+</html>
