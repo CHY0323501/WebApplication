@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>hw5-2</title>
+    <style>
+        body {
+            font-family:微軟正黑體;
+        }
+        table {
+            width:1200px;
+            margin:auto;
+            text-align:center;
+        }
+        tbody tr:nth-child(2n+1) {
+            background-color:#85cafc;
+        }
+        tbody tr:hover {
+            background-color:#faa16e;
+        }
+        thead tr  {
+            height:50px;
+            background-color:#000000;
+            color:white;
+        }
+        tbody tr td {
+            padding: 5px;
+        }
+        .redtext {
+            color:red;
+        }
+        
+    </style>
+</head>
+<body>
+    <table id="container"></table>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        var tripline ,delaytime;
+        $.ajax({
+            type: 'get',
+            url: 'https://ptx.transportdata.tw/MOTC/v2/Rail/TRA/LiveBoard?$orderby=ScheduledArrivalTime%20&$format=JSON',
+            format: 'json',
+            success: function (d) {
+                $('#container').append("<thead><tr><th>發車站名</th><th>車次</th><th>車種</th><th>山/海線</th><th>到站時間</th><th>發車時間</th><th>誤點時間</th></tr></thead><tbody>");
+                for (i = 0; i < d.length; i++) {
+                    if (d[i].TripLine == 0) {
+                        tripline = "不經山海線";
+                    } else if (d[i].TripLine == 1) {
+                        tripline = "山線";
+                    } else {
+                        tripline = "海線";
+                    }
+
+                    if (d[i].DelayTime > 0) {
+                        delaytime = "<td style='color:red'>"+d[i].DelayTime + "分</td>";
+                    } else {
+                        delaytime = "<td>準點</td>";
+                    }
+
+                    $('#container').append("<tr><td>" + d[i].StationName.Zh_tw + "</td><td>" + d[i].TrainNo + "</td><td>" + d[i].TrainTypeName.Zh_tw + "</td><td>" + tripline + "</td><td>" + d[i].ScheduledArrivalTime + "</td><td>" + d[i].ScheduledDepartureTime + "</td>" + delaytime + "</tr>");
+                };
+                $('#container').append("</tbody>");
+            },
+            error: function (d) {
+                console.log("連接失敗");
+            }
+        });
+    </script>
+</body>
+</html>
