@@ -1,4 +1,6 @@
-﻿@model IEnumerable<_03View.Models.NightMarket>
+﻿@using PagedList;                   @*先引進兩個pagedlist*@
+@using PagedList.Mvc;
+@model IPagedList<_03View.Models.NightMarket>
 
 @{
     ViewBag.Title = "南部地區各大夜市";
@@ -47,9 +49,9 @@
             </td>
             <td>
                 @*@Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })*@
-                <img src="~/images/@(item.id).jpg" width="200px"/>
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })*@
+                <img src="~/images/@(item.id).jpg" width="200px" />
             </td>
             <td>
                 <a href="https://www.google.com.tw/maps/place/@(item.address)" target="_blank" class="btn btn-success">查看地圖</a>
@@ -58,3 +60,4 @@
     }
 
 </table>
+<p>@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))</p>

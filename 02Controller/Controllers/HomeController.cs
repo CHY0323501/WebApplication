@@ -81,3 +81,76 @@ namespace _02Controller.Controllers
 
     }
 }
+//02-1 Controller撰寫練習-一般方法
+//02-1-1 在Controllers資料夾上按右鍵,加入,控制器,選擇 MVC5Controller-Empty
+//02-1-2 指定控制器名稱為HomeController,並開啟HomeController
+//02-1-3 建立一般方法ShowAry()-計算陣列總合
+//02-1-4 執行並測試 http://localhost:53468/Home/ShowAry (port可能不同)
+//02-1-5 建立一般方法ShowImages()-傳回顯示images資料夾裡1.jpg~8.jpg的HTML字串
+//02-1-6 執行並測試 http://localhost:53468/Home/ShowImages (port可能不同)
+//02-1-7 建立一般方法ShowImageIndex()-依index參數取得對應圖示與說明
+//02-1-8 執行並測試 http://localhost:53468/Home/ShowImageIndex?index=1 (port可能不同)
+
+
+//02-2 簡單模型繫結
+//02-2-1 在Controllers資料夾上按右鍵,加入,控制器,選擇 MVC5Controller-Empty
+//02-2-2 指定控制器名稱為SimpleBindController,並開啟SimpleBindController
+//02-2-3 建立GET與POST的Create方法
+//02-2-4 在public ActionResult Create()上按右鍵,新增檢視,建立Create View
+//02-2-5 進行下列設定:
+//       View name:Create
+//       Template:Empty(without model)
+//       不勾選Use a layout pages
+//       按下Add
+//02-2-6 修改title文字與加入form內容
+//02-2-7 執行並測試 http://localhost:53468/SimpleBind/Create (port可能不同)
+
+//02-3 複雜單模型繫結
+//02-3-1 在Models上按右鍵,選擇加入,新增項目,程式碼,選擇類別,名稱鍵入Product.cs
+//02-3-2 在Product class中輸入下列欄位以建立Model
+//02-3-3 在Controllers資料夾上按右鍵,加入,控制器,選擇 MVC5Controller-Empty
+//02-3-4 指定控制器名稱為ComplexBindController,並開啟ComplexBindController
+//02-3-5 using _02Controller.Models
+//02-3-6 建立GET與POST的Create方法
+//02-3-7 在public ActionResult Create()上按右鍵,新增檢視,建立Create View
+//02-3-8 進行下列設定:
+//       View name:Create
+//       Template:Empty(without model)
+//       不勾選Use a layout pages
+//       按下Add
+//02-3-9 修改title文字與加入form內容
+//02-3-10 執行並測試 http://localhost:53468/ComplexBind/Create (port可能不同)
+
+
+//02-4 檔案上傳功能
+//02-4-1 建立Photos資料夾
+//02-4-2 在Controllers資料夾上按右鍵,加入,控制器,選擇 MVC5Controller-Empty
+//02-4-3 指定控制器名稱為FileUploadController,並開啟FileUploadController
+//02-4-4 using System.IO
+//02-4-5 建立GET與POST的Create方法
+//02-4-6 建立ShowPhotos()一般方法-可顯示Photos資料夾下所有圖檔
+//02-4-7 在public ActionResult Create()上按右鍵,新增檢視,建立Create View
+//02-4-8 進行下列設定:
+//       View name:Create
+//       Template:Empty(without model)
+//       不勾選Use a layout pages
+//       按下Add
+//02-4-9 修改title文字與加入form內容
+//02-4-10 執行並測試 http://localhost:53468/FileUpload/Create (port可能不同)
+
+
+
+//02-5 一次多個檔案上傳功能
+//02-5-1 在Controllers資料夾上按右鍵,加入,控制器,選擇 MVC5Controller-Empty
+//02-5-2 指定控制器名稱為MultiFileUploadController,並開啟MultiFileUploadController
+//02-5-3 using System.IO
+//02-5-4 建立GET與POST的Create方法
+//02-5-5 建立ShowPhotos()一般方法-可顯示Photos資料夾下所有圖檔
+//02-5-6 在public ActionResult Create()上按右鍵,新增檢視,建立Create View
+//02-5-7 進行下列設定:
+//       View name:Create
+//       Template:Empty(without model)
+//       不勾選Use a layout pages
+//       按下Add
+//02-5-8 修改title文字與加入form內容
+//02-5-9 執行並測試 http://localhost:53468/MultiFileUpload/Create (port可能不同)

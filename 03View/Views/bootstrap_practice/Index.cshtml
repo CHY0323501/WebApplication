@@ -1,4 +1,7 @@
-﻿@model IEnumerable<_03View.Models.NightMarket>
+﻿@*@model IEnumerable<_03View.Models.NightMarket>*@
+@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<_03View.Models.NightMarket>
 
 @{
     ViewBag.Title = "南部地區各大夜市";
@@ -23,4 +26,5 @@
     </div>
     }
 </div>
+<p>@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))</p>
 

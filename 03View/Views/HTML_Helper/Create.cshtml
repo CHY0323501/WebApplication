@@ -1,0 +1,59 @@
+﻿@model _03View.Models.Member
+
+@{
+    ViewBag.Title = "會員註冊";
+}
+
+<h2>會員註冊</h2>
+@using (Html.BeginForm("Create","HTML_Helper",FormMethod.Post,new { id="form1"}))               //using是防止例外發生
+{
+    //使用helper可以在填完表單後自動儲存狀態，但是密碼欄位會不保留
+    <p>
+        帳號： @Html.TextBoxFor(a=>a.userid, new { @class = "form-control" })          @*因為class是C#的保留字，若要使用class屬性要先加上@*@
+    </p>
+    <p>
+        密碼： @Html.PasswordFor(a => a.pwd, new { @class = "form-control" })
+    </p>
+    <p>
+        姓名： @Html.TextBoxFor(a => a.name, new { @class = "form-control" })
+    </p>
+    <p>
+        Email：@Html.TextBoxFor(a => a.email, new { type = "email", @class = "form-control" })         @*第二個參數先寫new{}，可以加上原生html中有的屬性，如type、onclick等*@
+    </p>
+    <p>
+        生日： @Html.TextBoxFor(a => a.birthday, new { @class = "form-control" })
+    </p>
+    <p>
+        <img  id="code" src="@Url.Action("getCode")" /><span class="glyphicon glyphicon-refresh btn btn-default"  style="font-size:15pt" onclick="form1.code.src = '/HTML_Helper/getCode?' + Math.random()"></span>
+        <input id="ValidationCode" name="ValidationCode" type="text" maxlength="6" class="form-control" placeholder="請輸入上方驗證碼" />
+    </p>
+    <P>
+        <input id="Submit1" type="submit" value="送出" class="btn btn-success" />
+    </P>
+    <hr />
+    //msg中若有html標籤，使用viewbag，並不會被解析成html，要加上html.raw()，如下範例
+    @*<p>
+        @ViewBag.msg
+    </p>*@
+    <p>
+        @Html.Raw(@ViewBag.msg)
+    </p>
+}
+<hr />
+<h2>成績判斷</h2>
+@*自己定義一個helper(即定義一個函數)，要注意：寫在view上就只有這個view可以用*@
+@helper ScoreCheck(int math, int eng, int chi)
+{
+    int avg = (math + eng + chi) / 3;
+    if (avg >= 60)
+    {
+        @:及格
+    }
+    else
+    {
+        @:不及格
+    }
+}
+<h2>@ScoreCheck(60, 70, 80)</h2>
+@*要定義全域helper，可先新建app_code資料夾，再新增一個新的.cshtml*@
+<h2>@MyHelper.GlobalScoreCheck(40,50,50)</h2>

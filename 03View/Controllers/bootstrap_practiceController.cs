@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;        //安裝分頁套件後引入pagedlist
 
 namespace _03View.Controllers
 {
     public class bootstrap_practiceController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(int page=1)
         {
             string[] id = { "A01", "A02", "A03", "A04", "A05", "A06", "A07" };
 
@@ -29,8 +30,12 @@ namespace _03View.Controllers
                 nightMarket.address = address[i];
                 list.Add(nightMarket);
             }
+            //分頁功能
+            int pagesize = 3;
+            int pagecurrent = page < 1 ? 1 : page;
+            var pagedlist = list.ToPagedList(pagecurrent, pagesize);
 
-            return View(list);
+            return View(pagedlist);
         }
     }
 }
