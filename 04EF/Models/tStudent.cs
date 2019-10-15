@@ -18,7 +18,7 @@ namespace _04EF.Models
     {
         [DisplayName("學號")]
         [Required(ErrorMessage ="學號是必填欄位哦!")]
-        [RegularExpression("^[I-S][0-5][0-9]{2}$", ErrorMessage = "學號格式錯誤了O_O")]      //^=開始、$=結束
+        [RegularExpression("^[I-S][0-5][0-9]{2}$", ErrorMessage = "學號格式錯誤了O_O")]      //^=開始、$=結束，在這裡可以不用加
         public string fStuId { get; set; }
 
         [DisplayName("姓名")]

@@ -39,9 +39,9 @@
             format: 'json',
             success: function (d) {
                
-                $('#container').append("<thead><tr><th>動物種類</th><th>動物顏色</th><th>動物年齡</th><th>收容日期</th><th>收容位置</th></tr></thead><tbody>");
+                $('#container').append("<thead><tr><th>動物種類</th><th>動物顏色</th><th>動物年齡</th><th>收容日期</th><th>收容位置</th><th>收容中心電話</th></tr></thead><tbody>");
                 for (i = 0; i < d.length; i++) {
-                    $('#container').append("<tr><td>"+d[i].animal_kind+"</td><td>"+d[i].animal_colour+"</td><td>"+d[i].animal_age+"</td><td>"+d[i].animal_createtime+"</td><td>"+d[i].shelter_name+"</td></tr>");
+                    $('#container').append("<tr><td>"+d[i].animal_kind+"</td><td>"+d[i].animal_colour+"</td><td>"+d[i].animal_age+"</td><td>"+d[i].animal_createtime+"</td><td>"+d[i].shelter_name+"</td><td>"+d[i].shelter_tel+"</tr>");
                 };
                 $('#container').append("</tbody>");
             },
