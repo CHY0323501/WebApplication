@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--需輸入以下的meta-->
+    <meta name="viewport" content="width=device-width" />
+    <!----------->
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container">
+        <h1>h1 bootstrap4</h1>
+        <h2>h2 bootstrap4</h2>
+        <h3>h3 bootstrap4</h3>
+        <h4>h4 bootstrap4</h4>
+        <h5>h5 bootstrap4</h5>
+        <h6>h6 bootstrap4</h6>
+        <hr />
+        <p class="h1">h1 bootstrap4</p>
+        <p class="h2">h2 bootstrap4</p>
+        <p class="h3">h3 bootstrap4</p>
+        <p class="h4">h4 bootstrap4</p>
+        <p class="h5">h5 bootstrap4</p>
+        <p class="h6">h6 bootstrap4</p>
+        <hr />
+        <span class="h1">h1 bootstrap4</span>
+        <span class="h2">h2 bootstrap4</span>
+        <span class="h3">h3 bootstrap4</span>
+        <span class="h4">h4 bootstrap4</span>
+        <span class="h5">h5 bootstrap4</span>
+        <span class="h6">h6 bootstrap4</span>
+        <hr />
+        子標題
+        <h1>title<small>subtitle</small></h1>
+        <h2>title<small>subtitle</small></h2>
+        <h3>title<small>subtitle</small></h3>
+        <h4>title<small>subtitle</small></h4>
+        <h5>title<small>subtitle</small></h5>
+        <h6>title<small>subtitle</small></h6>
+        <hr />
+        <pre class="border border-danger  text-danger">
+            <code>
+                $.ajax({
+                type: 'get',
+                url: 'https://ptx.transportdata.tw/MOTC/v2/Air/FIDS/Airport/Departure?$orderby=FlightDate&$format=JSON',
+                format: 'json',
+                success: function (d) {
+                    $('#container').append("<thead><tr><th>航班日期</th><th>航機班號</th><th>表訂出發時間</th><th>航廈</th><th>航班屬性狀態</th></tr></thead><tbody>");
+                    for (i = 0; i < d.length; i++) {
+                        $('#container').append("<tr><td>"+d[i].FlightDate +"</td><td>"+d[i].FlightNumber +"</td><td>"+d[i].ScheduleDepartureTime +"</td><td>"+d[i].Terminal  +"</td><td>"+d[i].DepartureRemark +"</td></tr>");
+                    };
+                    $('#container').append("</tbody>");
+                },
+                error: function (d) {
+                    console.log(d);
+                }
+                });
+            </code>
+        </pre>
+        <p>請按下<mark>Ctrl+F</mark>進行搜尋</p>
+        <p>請按下<kbd>Ctrl+F</kbd>進行搜尋</p>
+    </div>
+</body>
+</html>

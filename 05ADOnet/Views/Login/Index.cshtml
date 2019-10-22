@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "登入";
+}
+
+<h2>登入</h2>
+@*<form class="form-inline">
+    <label for="account">ID</label>
+    <input id="account" type="text" class="form-control" />
+    <label for="pw">Password</label>
+    <input id="pw" type="password" class="form-control"/>
+</form>*@
+<form class="form-horizontal" method="post" action="@Url.Action("Index")">
+    <div class="form-group">
+        <label for="account" class="col-md-3">ID</label>
+        <div class="col-md-9">
+            <input id="account" name="account" type="text" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="pw" class="col-md-3">Password</label>
+        <div class="col-md-9">
+            <input id="pw" name="pw" type="password" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-9 col-md-offset-3" >
+            <input id="Submit1" type="submit" value="submit" class="btn btn-success" />
+            <input id="Reset1" type="reset" value="reset" class="btn btn-default" />
+        </div>
+    </div>
+</form>
+<h3 class="text-danger">@ViewBag.loginerr</h3>

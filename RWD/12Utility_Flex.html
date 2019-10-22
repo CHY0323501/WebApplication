@@ -102,13 +102,156 @@
             <div class="col2 p-1 align-self-end">Col 2</div>
             <div class="col1 p-1">Col 3</div>
         </div>
-        
+
+        <h3>對齊基線</h3>
         <div class="rowheight border border-primary d-flex">
             <div class="col1 p-1 align-self-baseline">Col 1</div>
             <div class="col2 p-1 align-self-baseline" style="font-size:56pt">Col 2</div>
             <div class="col1 p-1 align-self-baseline">Col 3</div>
         </div>
-
+        <hr />
+        <h3>fill</h3>
+        <div class="border border-primary d-flex mb-3">
+            <div class="col1 p-2 flex-fill">Col 1</div>
+            <div class="col2 p-2 flex-fill">Col 2</div>
+            <div class="col1 p-2 flex-fill">Col 3</div>
+        </div>
+        <hr />
+        <h3>grow and shrink</h3>
+        <div class="border border-primary d-flex mb-3">
+            <div class="col1 p-2 flex-grow-1">Col 1</div>
+            <div class="col2 p-2 flex-grow-1">Col 2</div>
+            <div class="col1 p-2 flex-grow-1">Col 3</div>
+        </div>
+        <div class="border border-primary d-flex mb-3">
+            <div class="col1 p-2 w-100">Col 1</div>
+            <div class="col1 p-2 flex-shrink-1">Col 3</div>
+        </div>
+        <hr />
+        <h3>auto margins</h3>
+        <div class="border border-primary d-flex mb-3">
+            <div class="col1 p-2 ">Col 1</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col1 p-2 ">Col 3</div>
+        </div>
+        <div class="border border-primary d-flex mb-3">
+            <div class="col1 p-2 mr-auto">Col 1</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col1 p-2 ">Col 3</div>
+        </div>
+        <div class="border border-primary d-flex mb-3">
+            <div class="col1 p-2 ">Col 1</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col1 p-2 ml-auto">Col 3</div>
+        </div>
+        <hr />
+        <h3>with align-item</h3>
+        <div class="rowheight border border-primary d-flex mb-3 align-items-lg-start flex-column">
+            <div class="col1 p-1 mb-auto">Col 1</div>
+            <div class="col2 p-1 ">Col 2</div>
+            <div class="col1 p-1 ">Col 3</div>
+        </div>
+        <div class="rowheight border border-primary d-flex mb-3 align-items-lg-start flex-column">
+            <div class="col1 p-1 ">Col 1</div>
+            <div class="col2 p-1 ">Col 2</div>
+            <div class="col1 p-1 mt-auto">Col 3</div>
+        </div>
+        <hr />
+        <h3>超過父container時換行 加上flex-wrap</h3>
+        <div class="border border-primary d-flex mb-3 flex-wrap">
+            <div class="col1 p-2 ">Col 1</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+        </div>
+        <hr />
+        <h3>排序(order)</h3>
+        <div class=" border border-primary d-flex mb-3 ">
+            <div class="col1 p-1 order-2">Col 1</div>
+            <div class="col2 p-1 order-3">Col 2</div>
+            <div class="col1 p-1 order-1">Col 3</div>
+        </div>
+        <hr />
+        <h3>align content</h3>
+        <div class="rowheight border border-primary d-flex mb-3 flex-wrap align-content-between" >
+            <div class="col1 p-2 ">Col 1</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+            <div class="col2 p-2 ">Col 2</div>
+        </div>
     </div>
 </body>
 </html>
