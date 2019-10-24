@@ -2,10 +2,10 @@
 
 @{
     ViewBag.Title = "Create";
+    //var aa = (IEnumerable<_06ViewModel.Models.職稱列表>)ViewBag.職稱;
 }
 
 <h2>Create</h2>
-
 
 @using (Html.BeginForm()) 
 {
@@ -72,9 +72,20 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.職稱, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.職稱, "職稱", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.職稱, new { htmlAttributes = new { @class = "form-control" } })
+
+
+
+                @*//不使用helper產生的下拉式選單寫法如下，需先將viewbag.職稱轉型，(IEnumerable<_06ViewModel.Models.職稱列表>)ViewBag.職稱
+                    <select id="Select1" name="職稱">
+                        @foreach (var i in aa)
+                        {
+                            <option value="@i.職稱代碼">@i.職稱1</option>
+                        }
+                    </select>*@
+
+                @Html.DropDownList("職稱", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.職稱, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -90,7 +101,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-<script src="~/Scripts/jquery-3.3.1.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

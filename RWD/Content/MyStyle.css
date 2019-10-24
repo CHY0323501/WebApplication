@@ -1,0 +1,11 @@
+﻿.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 120, 127, 0.05);
+}
+.table-hover tbody tr:hover {
+    color: black;
+    background-color: #ffd800;
+}
+    .table-bordered th,
+    .table-bordered td {
+        border: 2px dashed #ffd800;
+    }

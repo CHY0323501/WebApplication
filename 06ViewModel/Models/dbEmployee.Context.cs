@@ -26,6 +26,6 @@ namespace _06ViewModel.Models
         }
     
         public virtual DbSet<員工> 員工 { get; set; }
-        public virtual DbSet<職稱> 職稱 { get; set; }
+        public virtual DbSet<職稱列表> 職稱列表 { get; set; }
     }
 }

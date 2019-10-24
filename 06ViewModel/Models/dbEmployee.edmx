@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="NorthwindModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="NorthwindModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="員工">
           <Key>
             <PropertyRef Name="員工編號" />
@@ -19,7 +19,7 @@
           <Property Name="行政區" Type="nvarchar" MaxLength="15" />
           <Property Name="職稱" Type="int" />
         </EntityType>
-        <EntityType Name="職稱">
+        <EntityType Name="職稱列表">
           <Key>
             <PropertyRef Name="職稱代碼" />
           </Key>
@@ -27,10 +27,10 @@
           <Property Name="職稱" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <Association Name="FK__員工__職稱__08B54D69">
-          <End Role="職稱" Type="Self.職稱" Multiplicity="0..1" />
+          <End Role="職稱列表" Type="Self.職稱列表" Multiplicity="0..1" />
           <End Role="員工" Type="Self.員工" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="職稱">
+            <Principal Role="職稱列表">
               <PropertyRef Name="職稱代碼" />
             </Principal>
             <Dependent Role="員工">
@@ -40,14 +40,13 @@
         </Association>
         <EntityContainer Name="NorthwindModelStoreContainer">
           <EntitySet Name="員工" EntityType="Self.員工" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="職稱" EntityType="Self.職稱" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="職稱列表" EntityType="Self.職稱列表" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__員工__職稱__08B54D69" Association="Self.FK__員工__職稱__08B54D69">
-            <End Role="職稱" EntitySet="職稱" />
+            <End Role="職稱列表" EntitySet="職稱列表" />
             <End Role="員工" EntitySet="員工" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NorthwindModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -64,21 +63,29 @@
           <Property Name="城市" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="行政區" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="職稱" Type="Int32" />
-          <NavigationProperty Name="職稱1" Relationship="Self.FK__員工__職稱__08B54D69" FromRole="員工" ToRole="職稱" />
+          <NavigationProperty Name="職稱列表" Relationship="NorthwindModel.FK__員工__職稱__08B54D69" FromRole="員工" ToRole="職稱列表" />
         </EntityType>
-        <EntityType Name="職稱">
+        <EntityContainer Name="NorthwindEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="員工" EntityType="Self.員工" />
+          <EntitySet Name="職稱列表" EntityType="NorthwindModel.職稱列表" />
+          <AssociationSet Name="FK__員工__職稱__08B54D69" Association="NorthwindModel.FK__員工__職稱__08B54D69">
+            <End Role="職稱列表" EntitySet="職稱列表" />
+            <End Role="員工" EntitySet="員工" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="職稱列表">
           <Key>
             <PropertyRef Name="職稱代碼" />
           </Key>
           <Property Name="職稱代碼" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="職稱1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="員工" Relationship="Self.FK__員工__職稱__08B54D69" FromRole="職稱" ToRole="員工" />
+          <Property Name="職稱" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="員工" Relationship="NorthwindModel.FK__員工__職稱__08B54D69" FromRole="職稱列表" ToRole="員工" />
         </EntityType>
         <Association Name="FK__員工__職稱__08B54D69">
-          <End Role="職稱" Type="Self.職稱" Multiplicity="0..1" />
-          <End Role="員工" Type="Self.員工" Multiplicity="*" />
+          <End Type="NorthwindModel.職稱列表" Role="職稱列表" Multiplicity="0..1" />
+          <End Type="NorthwindModel.員工" Role="員工" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="職稱">
+            <Principal Role="職稱列表">
               <PropertyRef Name="職稱代碼" />
             </Principal>
             <Dependent Role="員工">
@@ -86,14 +93,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="NorthwindEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="員工" EntityType="Self.員工" />
-          <EntitySet Name="職稱" EntityType="Self.職稱" />
-          <AssociationSet Name="FK__員工__職稱__08B54D69" Association="Self.FK__員工__職稱__08B54D69">
-            <End Role="職稱" EntitySet="職稱" />
-            <End Role="員工" EntitySet="員工" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -115,11 +114,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="職稱">
-            <EntityTypeMapping TypeName="NorthwindModel.職稱">
-              <MappingFragment StoreEntitySet="職稱">
+          <EntitySetMapping Name="職稱列表">
+            <EntityTypeMapping TypeName="NorthwindModel.職稱列表">
+              <MappingFragment StoreEntitySet="職稱列表">
+                <ScalarProperty Name="職稱" ColumnName="職稱" />
                 <ScalarProperty Name="職稱代碼" ColumnName="職稱代碼" />
-                <ScalarProperty Name="職稱1" ColumnName="職稱" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

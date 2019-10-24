@@ -24,6 +24,6 @@ namespace _06ViewModel.Models
         public string 行政區 { get; set; }
         public Nullable<int> 職稱 { get; set; }
     
-        public virtual 職稱 職稱1 { get; set; }
+        public virtual 職稱列表 職稱列表 { get; set; }
     }
 }

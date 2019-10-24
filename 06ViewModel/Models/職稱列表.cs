@@ -12,16 +12,16 @@ namespace _06ViewModel.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class 職稱
+    public partial class 職稱列表
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public 職稱()
+        public 職稱列表()
         {
             this.員工 = new HashSet<員工>();
         }
     
         public int 職稱代碼 { get; set; }
-        public string 職稱1 { get; set; }
+        public string 職稱 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<員工> 員工 { get; set; }

@@ -69,6 +69,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="20Component_Card2.html" />
+    <Content Include="19Component_Card.html" />
+    <Content Include="18Content_Image.html" />
+    <Content Include="17Content_Table.html" />
     <Content Include="16Utility_Box.html" />
     <Content Include="15Utility_Text2.html" />
     <Content Include="14Utility_Text.html" />
@@ -91,6 +95,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\MyStyle.css" />
     <Content Include="Koala.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

@@ -19,7 +19,7 @@ namespace _05ADOnet.Controllers
             cmd.Connection = Conn;
 
             Conn.Open();
-            cmd.ExecuteNonQuery(); //執行sql指令
+            cmd.ExecuteNonQuery(); //執行非查詢的sql指令
             Conn.Close();
         }
         private DataTable querysql(string sql)
