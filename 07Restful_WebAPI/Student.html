@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Student WebAPI Demo</h1>
+            <p class="lead">A Web Application</p>
+            <p><a href="#" class="btn btn-danger">Learn More...</a></p>
+        </div>
+        <form id="form1">
+            <div class="form-group form-inline">
+                <label for="id" class="col-form-label col col-2">學號</label>
+                <input id="id" name="學號" type="text" class="form-control col col-10" /><br />
+            </div>
+            <div class="form-group form-inline">
+                <label for="name" class="col-form-label col col-2">姓名</label>
+                <input id="name" name="姓名" type="text" class="form-control col col-10" /><br />
+            </div>
+            <div class="form-group form-inline">
+                <label for="gender" class="col-form-label col col-2">性別</label>
+                <input id="gender" name="性別" type="text" class="form-control col col-10" /><br />
+            </div>
+            <div class="form-group form-inline">
+                <label for="tel" class="col-form-label col col-2">電話</label>
+                <input id="tel" name="電話" type="text" class="form-control col col-10" /><br />
+            </div>
+            <div class="form-group form-inline">
+                <label for="birthday" class="col-form-label col col-2">生日</label>
+                <input id="birthday" name="生日" type="text" class="form-control col col-10" /><br />
+            </div>
+            <input id="btnadd" type="button" value="新增資料" class="btn btn-success btn-block" />        <!--不可用submit送出資料，因為是使用ajax-->
+            <input id="btnList" type="button" value="顯示所有資料" class="btn btn-info btn-block" />
+            <input id="btnGet" type="button" value="查詢" class="btn btn-warning btn-block" />
+            <input id="btnUpdate" type="button" value="修改資料" class="btn btn-danger btn-block" />
+            <input id="btnDelete" type="button" value="刪除資料" class="btn btn-danger btn-block" />
+        </form>
+        <hr />
+        <ul id="list" class="list-group"></ul>
+    </div>
+    
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script>
+        //讀所有資料
+        $('#btnList').click(function () {
+            $('#list').empty();
+            $.ajax({
+                type: "Get",
+                url: "http://localhost:62033/api/Student",
+                success: function (d) {
+                    console.log(d);
+
+                    d.forEach(function (i) {
+
+                        $('#list').append("<li class='list-group-item'>學號：" + i.學號 + "　姓名：" + i.姓名 + "　性別：" + i.性別 + "　生日：" + i.生日 + "　電話：" + i.電話 + "</li>");
+                    });
+                }
+            });
+        });
+        //新增資料
+        $('#btnadd').click(function () {
+            console.log($('#form1').serialize())
+            $.ajax({
+                type: "Post",
+                url: "http://localhost:62033/api/Student",
+                data: $('#form1').serialize()       //透過序列化程式會自動將表單內所有項目轉為URL帶參數的形式
+                
+            });
+        });
+        
+        //查詢某筆資料
+        $('#btnGet').click(function () {
+            $.ajax({
+                type: "Get",
+                url: "http://localhost:62033/api/Student/" + $('#id').val(),
+                success: function (d) {
+                    console.log(d);
+
+                    $('#name').val(d.姓名);
+                    $('#gender').val(d.性別);
+                    $('#tel').val(d.電話);
+                    $('#birthday').val(d.生日);
+                }
+            });
+        });
+
+        //修改某筆資料
+        $('#btnUpdate').click(function () {
+            console.log($('#form1').serialize())
+            $.ajax({
+                type: "Put",
+                url: "http://localhost:62033/api/Student/"+ $('#id').val(),
+                data: $('#form1').serialize() ,      //透過序列化程式會自動將表單內所有項目轉為URL帶參數的形式
+                success: function (d) {
+                    console.log(d);
+                }
+                
+            });
+        });
+        //刪除某筆資料
+        $('#btnDelete').click(function () {
+            console.log($('#form1').serialize())
+            $.ajax({
+                type: "Delete",
+                url: "http://localhost:62033/api/Student/"+ $('#id').val(),
+                success: function (d) {
+                    console.log(d);
+                }
+                
+            });
+        });
+        
+    </script>
+</body>
+</html>

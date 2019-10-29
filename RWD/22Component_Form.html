@@ -1,0 +1,134 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/MyStyle.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" required class="form-control" placeholder="Enter Your Email" />
+                <small class="form-text text-muted">忘記帳號</small>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password</label>
+                <input id="pwd" type="password" required class="form-control" placeholder="Enter Your Password" />
+            </div>
+            <div class="form-group form-check">
+                <!--加上form-check會對齊-->
+                <input id="remember" type="checkbox" class="form-check-input" />
+                <label for="remember">記住我</label>
+            </div>
+            <input id="Submit1" type="submit" value="submit" class="btn btn-info" />
+        </form>
+        <div class="h1 bg-dark text-white text-center mt-4 mb-4"  >我是分隔線</div>
+        <form>
+            <div class="form-row">
+                <!--套上grid-system-->
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" required class="form-control" placeholder="Enter Your Email" />
+                    <small class="form-text text-muted">忘記帳號</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pwd">Password</label>
+                    <input id="pwd" type="password" required class="form-control" placeholder="Enter Your Password" />
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="Address">Address</label>
+                <input id="Address" type="text" required class="form-control" placeholder="Enter Your Address" />
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="County">County</label>
+                    <input id="County" type="text" required class="form-control" placeholder="Enter Your County" />
+                    <small class="form-text text-muted">忘記帳號</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="District">District</label>
+                    <select id="District" class="form-control">
+                        <option>左營區</option>
+                        <option>鼓山區</option>
+                        <option>苓雅區</option>
+
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-group form-check">
+                <!--加上form-check會對齊-->
+                <input id="remember" type="checkbox" class="form-check-input" />
+                <label for="remember">我同意上述條款</label>
+            </div>
+            <input id="Submit1" type="submit" value="submit" class="btn btn-success" />
+
+        </form>
+        <div class="h1 bg-dark text-white text-center mt-4 mb-4">我是分隔線</div>
+        <form>
+                <div class="form-group  row">
+                    <label for="email" class="col-sm-3 ">Email</label>
+                    <div class="col-sm-9">
+                        <input id="email" type="email" required class="form-control" placeholder="Enter Your Email" />
+                        <small class="form-text text-muted">忘記帳號</small>
+                    </div>
+                </div>
+                <div class="form-group  row">
+                    <label for="pwd" class="col-sm-3">Password</label>
+                    <div class="col-sm-9">
+                        <input id="pwd" type="password" required class="form-control" placeholder="Enter Your Password" />
+                    </div>
+                </div>
+            <fieldset class="form-group">
+                <div class="row">
+                    <legend class="col-sm-3 col-form-label">性別</legend>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <input id="male" type="radio" name="gender" checked />
+                            <label for="male">男</label>
+                        </div>
+                        <div class="form-check">
+                            <input id="female" type="radio" name="gender" />
+                            <label for="female">女</label>
+                        </div>
+                    </div>
+                </div>
+                <label for="Address">Address</label>
+                <input id="Address" type="text" required class="form-control" placeholder="Enter Your Address" />
+            </fieldset>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="County">County</label>
+                    <input id="County" type="text" required class="form-control" placeholder="Enter Your County" />
+                    <small class="form-text text-muted">忘記帳號</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="District">District</label>
+                    <select id="District" class="form-control">
+                        <option>左營區</option>
+                        <option>鼓山區</option>
+                        <option>苓雅區</option>
+
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-group form-check">
+                <!--加上form-check會對齊-->
+                <input id="remember" type="checkbox" class="form-check-input" />
+                <label for="remember">我同意上述條款</label>
+            </div>
+            <input id="Submit1" type="submit" value="submit" class="btn btn-success" />
+
+        </form>
+    </div>
+</body>
+</html>

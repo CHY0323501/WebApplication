@@ -1,0 +1,51 @@
+﻿<div class="jumbotron">
+    <h1>Chat</h1>
+    <p class="lead">你空虛寂寞覺得冷嗎？快加入聊天吧</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Gogogo &raquo;</a></p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <fieldset>
+            <legend>聊天室 &raquo;</legend>
+            <p>
+                <input id="user" name="user" type="text" class="form-control" />
+            </p>
+            <input id="btnconnect" type="button" value="進入聊天" class="btn btn-info" />
+            <hr />
+            <p>
+                <input id="message" name="message" type="text" class="form-control" />
+            </p>
+            <input id="btnSend" type="button" value="送出聊天" class="btn btn-success" />
+        </fieldset>
+    </div>
+    <div class="col-md-8">
+       <ul id="messageArea" style="height:400px;overflow:auto;border:1px dashed #0094ff"></ul>
+    </div>
+</div>
+@section scripts{       @*在網頁生成後，此段javascript會生成在layout指定scripts生成的位置*@
+    <script>
+        $('#btnconnect').click(function () {
+            var url = "ws://localhost:59700/api/Chat?user=" + $('#user').val();     //網址要改成ws開頭
+            var ws = new WebSocket(url);
+            console.log(ws);
+
+            ws.onopen = function () {
+                ws.send("已進入聊天室");
+            }
+
+            ws.onmessage = function (e) {
+                $('#messageArea').append($('<li>').text(e.data));
+            }
+            ws.onerror = function () {
+                alert("無法連至聊天室");
+            }
+            $('#btnSend').click(function () {
+                ws.send($('#message').val());
+                $('#message').val('');
+            });
+           
+        });
+         
+    </script>
+}
+
