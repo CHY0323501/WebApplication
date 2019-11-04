@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="25Component_Alert.html" />
     <Content Include="24Component_ValidationStatus.html" />
     <Content Include="23Component_Form2.html" />
     <Content Include="22Component_Form.html" />

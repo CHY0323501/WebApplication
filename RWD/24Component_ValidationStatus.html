@@ -20,8 +20,8 @@
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input id="pwd" type="password" class="form-control" />
-                    <div>
+                    <input id="pwd" type="password" class="form-control " placeholder="Enter Your Password....."/>
+                    <div >
 
                     </div>
                 </div>
@@ -34,18 +34,51 @@
 
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script>
+        var emailRegex = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;         //寫正規表達式須/^開頭，$/結尾；\w表示至少一個大小寫英文、數字、底線
+        var flag = false;
+
         $('#login').submit(function () {        //送出表單前觸發的事件
             //表單為空時無法post
-            if ($('#email').val() == "" || $('#pwd').val() == "") {
+
+            if ($('#email').val() == "") {
                 $('#email').addClass('is-invalid');
                 $('#email~div').addClass('invalid-feedback').text('此為必填欄位');
-            }
+                return false;
+            }  
+
             if ($('#pwd').val() == "") {
                 $('#pwd').addClass('is-invalid');
                 $('#pwd~div').addClass('invalid-feedback').text('此為必填欄位');
+                return false;
+            }  
+
+            if (!flag)
+                return false
+            return true;
+        });
+        //即時驗證
+        $('#email').keyup(function () {
+            if (!emailRegex.test($('#email').val())) {                //使用預設regular expression的test函數來驗證，通過回傳true
+                $('#email').addClass('is-invalid');
+                $('#email~div').addClass('invalid-feedback').text('Email格式錯誤');
+                flag = false;
+            }else {
+                $('#email').removeClass('is-invalid').addClass('is-valid');
+                $('#email~div').removeClass('invalid-feedback').addClass('valid-feedback').text('OK');
+                flag = true;
             }
-            return false;
-        }); 
+        });
+        $('#pwd').keyup(function () {
+            if ($('#pwd').val().length < 8) {
+                $('#pwd').addClass('is-invalid');
+                $('#pwd~div').addClass('invalid-feedback').text('密碼長度須大於8碼');
+                flag = false;
+            }else {
+                $('#pwd').removeClass('is-invalid').addClass('is-valid');
+                $('#pwd~div').removeClass('invalid-feedback').addClass('valid-feedback').text('OK');
+                flag = true;
+            }
+        });
         
     </script>
 </body>
