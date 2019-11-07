@@ -48,6 +48,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07Restful_WebAPI", "07Restf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08WebSocket", "08WebSocket\08WebSocket.csproj", "{3868F01E-F177-4BF5-92A3-00EAABB7B445}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RWD_Practice_02", "..\..\網站相關\上課教材\RWD_Practice_02\RWD_Practice_02\", "{430E7CAC-697D-48E7-B02A-B41460D2046A}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58463"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\網站相關\上課教材\RWD_Practice_02\RWD_Practice_02\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58463\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58463"
+		Release.AspNetCompiler.PhysicalPath = "..\..\網站相關\上課教材\RWD_Practice_02\RWD_Practice_02\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58463\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58463"
+		SlnRelativePath = "..\..\網站相關\上課教材\RWD_Practice_02\RWD_Practice_02\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,6 +127,10 @@ Global
 		{3868F01E-F177-4BF5-92A3-00EAABB7B445}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3868F01E-F177-4BF5-92A3-00EAABB7B445}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3868F01E-F177-4BF5-92A3-00EAABB7B445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{430E7CAC-697D-48E7-B02A-B41460D2046A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{430E7CAC-697D-48E7-B02A-B41460D2046A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{430E7CAC-697D-48E7-B02A-B41460D2046A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{430E7CAC-697D-48E7-B02A-B41460D2046A}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

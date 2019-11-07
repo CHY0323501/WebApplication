@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "ploymophism";
+}
+
+<h2>ploymophism</h2>
+
+<form method="post" action="@Url.Action("ploymophism")">
+    <select id="select1" name="type">
+        <option selected value="d">狗</option>
+        <option value="c">貓</option>
+    </select>
+    <button type="submit" >回傳動物叫聲</button>
+</form>
+@ViewBag.Result

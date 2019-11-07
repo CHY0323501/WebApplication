@@ -9,3 +9,13 @@
     .table-bordered td {
         border: 2px dashed #ffd800;
     }
+
+.breadcrumb {
+    background-color: #ffd800;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    color: #000000;
+    content: ">";
+}
