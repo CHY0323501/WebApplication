@@ -69,6 +69,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="32Media.html" />
+    <Content Include="31Jumbotron.html" />
+    <Content Include="30Component_Nav.html" />
+    <Content Include="29Component_DropDown.html" />
+    <Content Include="28Component_Buttons.html" />
     <Content Include="27Component_BreadCrumb.html" />
     <Content Include="26Component_Badge.html" />
     <Content Include="25Component_Alert.html" />
@@ -103,6 +108,23 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\MyStyle.css" />
+    <Content Include="index_images\00.jpg" />
+    <Content Include="index_images\01.jpg" />
+    <Content Include="index_images\02.jpg" />
+    <Content Include="index_images\03.jpg" />
+    <Content Include="index_images\04.jpg" />
+    <Content Include="index_images\05.jpg" />
+    <Content Include="index_images\06.jpg" />
+    <Content Include="index_images\07.jpg" />
+    <Content Include="index_images\08.jpg" />
+    <Content Include="index_images\11.jpg" />
+    <Content Include="index_images\12.jpg" />
+    <Content Include="index_images\13.jpg" />
+    <Content Include="index_images\14.jpg" />
+    <Content Include="index_images\15.jpg" />
+    <Content Include="index_images\16.jpg" />
+    <Content Include="index_images\17.jpg" />
+    <Content Include="index_images\18.jpg" />
     <Content Include="Koala.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

@@ -1,21 +1,51 @@
 ﻿.table-striped tbody tr:nth-of-type(odd) {
     background-color: rgba(0, 120, 127, 0.05);
 }
+
 .table-hover tbody tr:hover {
     color: black;
     background-color: #ffd800;
 }
-    .table-bordered th,
-    .table-bordered td {
-        border: 2px dashed #ffd800;
-    }
+
+.table-bordered th,
+.table-bordered td {
+    border: 2px dashed #ffd800;
+}
+
+.jumbotron {
+    background-image: url('../index_images/00.jpg');
+    background-repeat:round;
+}
 
 .breadcrumb {
     background-color: #ffd800;
 }
+
 .breadcrumb-item + .breadcrumb-item::before {
     display: inline-block;
     padding-right: 0.5rem;
     color: #000000;
     content: ">";
+}
+.jbtron_style {
+    font-family: 微軟正黑體;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    font-weight: 700;
+    font-size: 72px;
+}
+.jbtron_style2 {
+    font-family: 微軟正黑體;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    font-weight: 700;
+    font-size: 32px;
+}
+.mybtn{
+    font-family: 微軟正黑體;
+    color: white;
+    font-weight: 700;
+}
+.myfont {
+    font-family: 微軟正黑體;
 }

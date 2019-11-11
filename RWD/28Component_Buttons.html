@@ -1,0 +1,50 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/MyStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <input id="Button1" type="button" value="button" class="btn btn-danger" />
+        <input id="Reset1" type="reset" value="reset" class="btn btn-success" />
+        <input id="Submit1" type="submit" value="submit" class="btn btn-warning" />
+        <a href="#" class="btn btn-info">Link</a>
+        <input id="Button1" type="button" value="button" class="btn btn-link" />
+
+        <hr />
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> A
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2" autocomplete="off"> B
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option3" autocomplete="off"> C
+            </label>
+        </div>
+        <hr />
+        <div class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-info active">
+                <input type="checkbox" name="check" id="check1" autocomplete="off" checked> A
+            </label>
+            <label class="btn btn-info">
+                <input type="checkbox" name="check" id="check2" autocomplete="off"> B
+            </label>
+            <label class="btn btn-info">
+                <input type="checkbox" name="check" id="check3" autocomplete="off"> C
+            </label>
+        </div>
+
+    </div>
+
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+</body>
+</html>
