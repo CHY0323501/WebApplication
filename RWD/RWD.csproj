@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="33Modal.html" />
     <Content Include="32Media.html" />
     <Content Include="31Jumbotron.html" />
     <Content Include="30Component_Nav.html" />
