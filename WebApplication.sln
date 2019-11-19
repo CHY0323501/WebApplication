@@ -69,6 +69,48 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RWD_Practice_02", "..\..\�
 		SlnRelativePath = "..\..\網站相關\上課教材\RWD_Practice_02\RWD_Practice_02\"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RWD_Practice_03", "..\..\網站相關\上課教材\RWD_Practice_03\", "{C8361228-6C91-4ED6-95D3-CBCC6FC21E61}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55580"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\網站相關\上課教材\RWD_Practice_03\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55580\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55580"
+		Release.AspNetCompiler.PhysicalPath = "..\..\網站相關\上課教材\RWD_Practice_03\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55580\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55580"
+		SlnRelativePath = "..\..\網站相關\上課教材\RWD_Practice_03\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RWD_Practice_04", "..\..\網站相關\上課教材\RWD_Practice_04\", "{BE0F3D32-C9EB-4F8C-95C8-E61194161B20}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50740"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\網站相關\上課教材\RWD_Practice_04\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50740\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50740"
+		Release.AspNetCompiler.PhysicalPath = "..\..\網站相關\上課教材\RWD_Practice_04\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50740\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50740"
+		SlnRelativePath = "..\..\網站相關\上課教材\RWD_Practice_04\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +173,14 @@ Global
 		{430E7CAC-697D-48E7-B02A-B41460D2046A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{430E7CAC-697D-48E7-B02A-B41460D2046A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{430E7CAC-697D-48E7-B02A-B41460D2046A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{C8361228-6C91-4ED6-95D3-CBCC6FC21E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8361228-6C91-4ED6-95D3-CBCC6FC21E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8361228-6C91-4ED6-95D3-CBCC6FC21E61}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8361228-6C91-4ED6-95D3-CBCC6FC21E61}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{BE0F3D32-C9EB-4F8C-95C8-E61194161B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE0F3D32-C9EB-4F8C-95C8-E61194161B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE0F3D32-C9EB-4F8C-95C8-E61194161B20}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE0F3D32-C9EB-4F8C-95C8-E61194161B20}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

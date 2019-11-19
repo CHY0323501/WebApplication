@@ -22,7 +22,6 @@ namespace _05ADOnet.Controllers
            return ds.Tables[0];
         }
         public string ShowEmployee() {
-            //此種直接寫sqlcommand的寫法會有資安問題(資料隱碼問題)，ex:密碼欄位打上【'or''='】
             
             //接著到web config中新增連線字串，若在controller寫連線字串，其他controller無法使用；
             //偷吃步自動產生連線字串的方式：可使用webform的控制項資料>sqlsource，拉到form標籤中，點畫面下方的設計選擇資料來源，之後會在webconfig產生連線字串

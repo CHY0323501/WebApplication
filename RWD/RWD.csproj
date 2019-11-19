@@ -69,6 +69,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="37Popover_Tooltip.html" />
+    <Content Include="36Spinners.html" />
+    <Content Include="35Progress.html" />
+    <Content Include="34Pagination.html" />
     <Content Include="33Modal.html" />
     <Content Include="32Media.html" />
     <Content Include="31Jumbotron.html" />
@@ -109,6 +113,16 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\MyStyle.css" />
+    <Content Include="hw_photos\BaiIceIce.jpg" />
+    <Content Include="hw_photos\DragonTigerTower.jpg" />
+    <Content Include="hw_photos\Kaohsiung.jpg" />
+    <Content Include="hw_photos\Kaohsiung_City.png" />
+    <Content Include="hw_photos\mayor.jpg" />
+    <Content Include="hw_photos\Rainbow.jpg" />
+    <Content Include="hw_photos\利菁.jpg" />
+    <Content Include="hw_photos\張琍敏.jpg" />
+    <Content Include="hw_photos\忠烈祠.jpg" />
+    <Content Include="HW_RWD.html" />
     <Content Include="index_images\00.jpg" />
     <Content Include="index_images\01.jpg" />
     <Content Include="index_images\02.jpg" />
@@ -127,6 +141,7 @@
     <Content Include="index_images\17.jpg" />
     <Content Include="index_images\18.jpg" />
     <Content Include="Koala.jpg" />
+    <Content Include="MyStyle.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />

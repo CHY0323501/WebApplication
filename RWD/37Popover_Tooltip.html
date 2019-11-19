@@ -1,0 +1,52 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="Content/MyStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <img src="Koala.jpg" alt="這是一隻無尾熊" title="這是一隻無尾熊" data-toggle="tooltip" data-placement="right" />
+        <hr />
+        <button id="btn" class="btn btn-success" data-toggle="popover" title="這是一個Popover展示" data-content="這是bs4的POPOVER" data-placement="top" data-container="body">Submit</button>
+        <hr />
+        <form>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" required class="form-control" placeholder="Enter Your Email" />
+                <small class="form-text text-muted">忘記帳號</small>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password</label>
+                <input id="pwd" type="password" required class="form-control" placeholder="Enter Your Password" />
+            </div>
+            <div class="form-group form-check">
+                <input id="remember" type="checkbox" class="form-check-input" title="請勾選我同意" data-toggle="tooltip" data-placement="top" />
+                <label for="remember">我同意</label>
+            </div>
+            <input id="Submit1" type="button" value="submit" class="btn btn-info" />
+        </form>
+
+    </div>
+
+
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script>
+        $('#Submit1').click(function () {
+            if (!$('#remember').is(':checked'))
+                $('#remember').tooltip('show');
+        });
+
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
+    </script>
+
+
+</body>
+</html>

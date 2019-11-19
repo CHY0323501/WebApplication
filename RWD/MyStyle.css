@@ -1,0 +1,22 @@
+﻿body {
+    font-family: 微軟正黑體;
+}
+.jumbotron {
+    background-image: url('hw_photos/Kaohsiung.jpg');
+    background-repeat: round;
+}
+.jbtron_style {
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    font-weight: 700;
+    font-size: 56px;
+}
+.jbtron_style2 {
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    font-weight: 700;
+    font-size: 32px;
+}
+.jumb-bg {
+    background-image: none;
+}
