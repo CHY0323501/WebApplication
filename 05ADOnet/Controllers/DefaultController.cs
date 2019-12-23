@@ -73,7 +73,7 @@ namespace _05ADOnet.Controllers
         {
             string sql = "select 公司名稱,連絡人,連絡人職稱,地址 from 客戶 where 地址 like @kw";
             SqlDataAdapter adp = new SqlDataAdapter(sql, Conn);
-            //避免資料隱碼攻擊的做法如下（把變數換成parameter）
+            //避免資料隱碼攻擊(sql injection)的做法如下（把變數換成parameter）
             adp.SelectCommand.Parameters.AddWithValue("@kw","%"+keyword+"%");
 
             DataSet ds = new DataSet();

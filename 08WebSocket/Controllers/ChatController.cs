@@ -25,11 +25,12 @@ namespace _08WebSocket.Controllers
             public ChatWebSocketHandler(string user) {
                 _user = user;
             }
-
-            public override void OnOpen()               //override表示覆寫某個已存在的函數，
+            //覆寫OnOpen事件，鑄造新的ChatWebSocketHandler時觸發
+            public override void OnOpen()               
             {     
                 _chatClients.Add(this);                 //加入目前連進來的人到chatclients中
             }
+            //覆寫OnMessage事件，前端send時觸發，被觸發後會回頭觸發前端的onmessage事件
             public override void OnMessage(string message)
             {
                 _chatClients.Broadcast(_user+" "+message);
